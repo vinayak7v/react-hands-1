@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React, { useState } from "react"
+import FuncComp from "./FuncComp"
+import ClassComp from "./ClassComp"
+import './App.css'
 
 function App() {
+  const [fState, setFState] = useState(false);
+  const [cState, setCState] = useState(false)
+  console.log(fState);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>STYLE USING CLASS COMPONENT </h1>
+
+      <button className="btn" onClick={()=>setFState(!fState)}> style in function component</button>
+      <button className="btn" onClick={()=>setCState(!cState)}> style in class component</button>
+
+       {fState ? <FuncComp /> : " "}
+       {cState ? <ClassComp /> : " "} 
+    </>
   );
 }
 
 export default App;
+  
